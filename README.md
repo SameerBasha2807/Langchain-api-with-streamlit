@@ -1,5 +1,5 @@
 # Langchain-api-with-streamlit
-# 🤖 LangChain + Ollama API with Streamlit UI
+#  LangChain + Ollama API with Streamlit UI
 
 A simple full-stack LLM application using:
 
@@ -162,11 +162,7 @@ Contributions are welcome! Feel free to fork and improve.
 
 ---
 
-## 📜 License
 
-MIT License
-
----
 
 ## ⭐ Acknowledgements
 
