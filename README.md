@@ -1,175 +1,77 @@
-# Langchain-api-with-streamlit
-#  LangChain + Ollama API with Streamlit UI
+# LangChain API with Streamlit
 
-A simple full-stack LLM application using:
+A simple full-stack LLM application built using **FastAPI**, **LangChain**, **Ollama**, and **Streamlit**. The application exposes LangChain pipelines as REST APIs and provides a Streamlit interface for interacting with a locally hosted LLM.
 
-* ⚡ **FastAPI** backend
-* 🧠 **LangChain + Ollama (LLaMA 3)** for text generation
-* 🎨 **Streamlit** frontend UI
+## Features
 
-This project demonstrates how to build and serve **LLM-powered APIs** and consume them in a user-friendly interface.
+* Generate essays from a given topic
+* Generate poems for children
+* FastAPI backend with LangServe
+* Interactive Streamlit frontend
+* Local LLM inference using Ollama
 
----
+## Tech Stack
 
-## 🚀 Features
-
-* 📝 Generate **essays** from a topic
-* 🎵 Generate **poems for kids**
-* 🔌 API endpoints using LangServe
-* 💻 Interactive Streamlit frontend
-* ⚡ Local LLM inference via Ollama (no API key needed)
-
----
-
-## 🛠️ Tech Stack
-
+* Python
 * FastAPI
 * LangChain
 * LangServe
-* Ollama (LLaMA 3)
+* Ollama (Llama 3)
 * Streamlit
-* Python
 
----
+## Project Structure
 
-## 📂 Project Structure
-
-```id="tree99"
+```text
 .
-├── app.py        # FastAPI + LangChain server
-├── client.py     # Streamlit frontend
+├── app.py
+├── client.py
 └── README.md
 ```
 
----
+## Installation
 
-## ⚙️ How It Works
+### Clone the Repository
+### Create a Virtual Environment
 
-### 🔹 Backend (`app.py`)
+**Windows**
 
-* Creates a FastAPI server 
-* Uses **Ollama (LLaMA 3)** as the LLM
-* Defines two prompt pipelines:
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+### Install Dependencies
 
-  * `/essay` → generates essays
-  * `/poem` → generates poems
-* Exposes endpoints using `LangServe`
-
----
-
-### 🔹 Frontend (`client.py`)
-
-* Built with Streamlit 
-* Takes user input (topic)
-* Sends request to:
-
-  ```
-  http://localhost:8000/poem/invoke
-  ```
-* Displays generated output in real-time
-
----
-
-## ▶️ Getting Started
-
-### 1. Install dependencies
-
-```bash id="install_dep"
+```bash
 pip install fastapi uvicorn langchain langserve streamlit requests
 ```
 
----
+## Install Ollama
 
-### 2. Install & Run Ollama
+Download Ollama from:
 
-Download from: https://ollama.com
+https://ollama.com
 
-Then run:
+Pull the required model:
 
-```bash id="ollama_run"
-ollama run llama3
+```bash
+ollama pull llama3
 ```
 
----
+## Run the Backend
 
-### 3. Start Backend Server
-
-```bash id="run_backend"
+```bash
 python app.py
 ```
 
-Server will run at:
+The API will be available at:
 
 ```
 http://localhost:8000
 ```
 
----
+## Run the Streamlit Application
 
-### 4. Run Streamlit App
-
-```bash id="run_frontend"
+```bash
 streamlit run client.py
 ```
-
----
-
-## 🧪 Example Usage
-
-* Enter: `rainbows`
-* Output: a 100-word poem for a child 🌈
-
----
-
-## 🔗 API Endpoints
-
-| Endpoint        | Description    |
-| --------------- | -------------- |
-| `/essay/invoke` | Generate essay |
-| `/poem/invoke`  | Generate poem  |
-
----
-
-## 🧠 Example Prompt Templates
-
-* Essay:
-
-  ```
-  Write me an essay about {topic} with 100 words
-  ```
-
-* Poem:
-
-  ```
-  Write me a poem about {topic} for a 5-year-old with 100 words
-  ```
-
----
-
-## 🔧 Future Improvements
-
-* Add chat interface (memory)
-* Support multiple models
-* Add authentication
-* Deploy to cloud (Render / AWS / Docker)
-* Add streaming responses
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to fork and improve.
-
----
-
-
-
-## ⭐ Acknowledgements
-
-* LangChain
-* Ollama
-* FastAPI
-* Streamlit
-
----
 
